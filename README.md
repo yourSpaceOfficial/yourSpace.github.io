@@ -1,2 +1,2 @@
 # yourSpace
-Chrome Extension, soon to be avaliable for all Chrome users
+Chrome Extension, avaliable for all Chrome users everywhere.
