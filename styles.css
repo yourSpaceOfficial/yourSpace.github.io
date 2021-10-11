@@ -1,5 +1,227 @@
+:root{
+    --dark-background-color: #111111;
+    --dark-background-color-alt: #222222;
+    --dark-trim-color: #333333;
+    --dark-text-color: #eeeeee;
+    --dark-logo-color: #445e93ff;
+    --dark-navbar-color:rgb(4, 25, 43);
+    --dark-checked-color: maroon; 
+    --font-family: "Cabin", sans-serif;
+    --dark-todo-header-color: rgb(44, 44, 44);
+}
+.header-of-app{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    z-index: 1;
+    background: var(--background-color);
+    border-bottom: 1px solid var(--trim-color);
+    box-shadow: 0 0 5px var(--text-color);
+}
+.header{
+    font-family: var(--font-family);
+    font-weight: 400;
+    z-index: 1;
+}
+.main{
+    width: 750px;
+}
+select{
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 5px;
+    border-radius: 10px;
+}
+#light{
+    color: var(--text-color);
+    background: var(--background-color);
+}
+#dark{
+    color: var(--text-color);
+    background: var(--background-color);
+}
+#auto{
+    color: var(--text-color);
+    background: var(--background-color);
+}
+.selectDisplay{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 7px 14px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 500;
+    font-family: var(--font-family);
+}
+.drop-down{
+    position: absolute;
+    top: 20px;
+    right: 90px;
+    color: var(--logo-color);
+    margin-right: 1px;
+}
 body{
-    margin: 0;
-    background: cornflowerblue;
+    /*Light Theme*/
+    --background-color: #ffffff;
+    --text-color: #202020;
+    --logo-color: #7eb2ddff;
+    --navbar-color: rgb(212, 224, 235);
+    --todo-header-color: rgb(197, 197, 197);
+    --checked-color:#f93943ff;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+}
+
+body.theme-dark{
+    --background-color: var(--dark-background-color);
+    --text-color: var(--dark-text-color);
+    --logo-color: var(--dark-logo-color);
+    --navbar-color: var(--dark-navbar-color);
+    --todo-header-color: var(--dark-todo-header-color);
+    --checked-color: var(--dark-checked-color);
+}
+@media (prefers-color-scheme: dark){
+    body.theme-auto{
+        --background-color: var(--dark-background-color);
+        --text-color: var(--dark-text-color);
+        --logo-color: var(--dark-logo-color);
+        --navbar-color: var(--dark-navbar-color);
+        --todo-header-color: var(--dark-todo-header-color);
+    }
+}
+a{
+    text-decoration: none;
+    color: var(--text-color);
+    align-items: center;
+    font-family: var(--font-family);
+}
+/* #button-navbar{
+    position: absolute;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    right: 60%;
+    font-size: 18px;
+} */
+.bar a{
+    list-style: none;
+    display: inline-block;
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 25px;
+}
+#paragraph a{
+    /* list-style: none; */
+    text-decoration: none;
+}
+.navbar{
+    /*float: left;*/
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+    /* left: -200px; */
+    /* opacity: 0; */
+    /* transition: left 0.25s ease-in-out, opacity 0.25s ease-in-out; */
+    height: 50%;
+    /* background: var(--navbar-color); */
+    /* border-right: 2px solid var(--navbar-color); */
+    /* box-shadow: 0 0 10px 5px rgba(0,0,0, 0.25); */
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+}
+.navbar ul {
     text-align: center;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 10px;
+}
+.navbar ul li a{
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding: 25px;
+}
+.btn{
+    cursor: pointer;
+    background: 0;
+    border: 0;
+    padding: 0;
+    color: var(--logo-color);
+}
+
+.new.list{
+    padding: 0.25em;
+    font-size: 15px;
+    width: auto;
+}
+.new.task{
+    margin-bottom: 0;
+    padding: 0.25em;
+    font-size: 17.5px;
+    width: auto;
+}
+.new{
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--text-color);
+    font-size: 25px;
+    order: 2;
+
+    transition: border-bottom 150ms ease-in;
+}
+.new:focus{
+    border-bottom-width: 3px;
+}
+.new:focus::placeholder{
+    opacity: 0.3;
+}
+::placeholder{
+    color: var(--text-color);
+    opacity: 1;
+}
+input, select, textarea{
+    color: var(--text-color);
+}
+.task-list{
+    line-height: 1.5;
+    font-size: 1.25rem;
+    list-style: none;
+    letter-spacing: 0.25px;
+    padding-left: 1.69em;
+}
+.all-tasks ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: var(--logo-color); /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 0.75em; /* Also needed for space (tweak if needed) */
+    margin-left: -1.5em; /*Also needed for space (tweak if needed) */
+  }
+#paragraph{
+    text-align: center;
+}
+.link-button{
+    margin-top: 50px;
+    text-align: center;
+}
+.title-of-ting{
+    line-height: 4px;
 }
