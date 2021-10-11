@@ -66,8 +66,13 @@
         height: 70px;
         line-height: 20px;
     }
+    .main-link{
+        width: 50%;
+    }
+    .slogan{
+        width: 50%;
+    }
 }
-
 select{
     display: inline-flex;
     align-items: center;
